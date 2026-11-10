@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eAirport Simulation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">OPEN SKY LIVE OPS</p>
+          <h1>eAirport</h1>
+        </div>
+        <div class="status-pill" id="statusPill">
+          <span class="status-dot"></span>
+          <span id="statusText">Preparing runway</span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="scene-panel">
+          <form id="configForm" class="config-form">
+            <label>
+              Airport
+              <input id="airportInput" type="text" maxlength="4" value="KJFK" />
+            </label>
+            <label>
+              Client ID
+              <input id="clientIdInput" type="text" placeholder="optional" />
+            </label>
+            <label>
+              Client Secret
+              <input id="clientSecretInput" type="password" placeholder="optional" />
+            </label>
+            <button type="submit">Connect</button>
+          </form>
+
+          <div class="airport-scene">
+            <div class="sun"></div>
+            <div class="cloud cloud-a"></div>
+            <div class="cloud cloud-b"></div>
+            <div class="cloud cloud-c"></div>
+
+            <div class="terminal terminal-left"></div>
+            <div class="terminal terminal-right"></div>
+
+            <div class="runway">
+              <div class="runway-markings"></div>
+            </div>
+
+            <div class="taxiway"></div>
+            <div class="hold-short"></div>
+
+            <div id="planeLayer" class="plane-layer"></div>
+
+            <div class="tower">
+              <div class="tower-light"></div>
+            </div>
+
+            <div class="atc-panel">
+              <span class="panel-label">ATC</span>
+              <strong id="atcMessage">Runway clear. Awaiting live flight data.</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="flight-panel">
+          <div class="panel-header">
+            <h2>Live flights</h2>
+            <span id="sourceBadge" class="source-badge">demo</span>
+          </div>
+          <ul id="flightList" class="flight-list"></ul>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

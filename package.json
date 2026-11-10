@@ -1,0 +1,10 @@
+{
+  "name": "eairport",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OpenSky-powered 2D cartoon airport simulation",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
